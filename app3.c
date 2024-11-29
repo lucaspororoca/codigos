@@ -157,6 +157,18 @@ void initialize(struct Node** head_ref) {
     *head_ref = NULL;
 }
 
+int length(struct Node* head){
+    struct Node* current = *head;
+    int count = 0;
+
+    while(current != NULL){
+        current = current->next;
+        count++;
+    }
+
+    return count;
+}
+
 void insert(struct Node** head_ref, int position, int value) {
     // Criar um novo nó
     struct Node* new_node = (struct Node*)malloc(sizeof(struct Node));
